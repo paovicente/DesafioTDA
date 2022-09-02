@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - cementeryObject
+  - Food
   layers:
   - Default
   - TransparentFX

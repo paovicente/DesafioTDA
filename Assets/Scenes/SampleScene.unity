@@ -187,6 +187,7 @@ Transform:
   - {fileID: 1325761682}
   - {fileID: 1611416345}
   - {fileID: 1994984797}
+  - {fileID: 1695197105}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -434,7 +435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &963194226
 AudioListener:
   m_ObjectHideFlags: 0
@@ -518,7 +519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1062690892
 Transform:
   m_ObjectHideFlags: 0
@@ -527,7 +528,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1062690891}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 5.506424, z: 19.75167}
+  m_LocalPosition: {x: -0.00040156144, y: 2.5092282, z: 10.204704}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -567,7 +568,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 49.2
+  field of view: 63.5
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -596,7 +597,7 @@ GameObject:
   - component: {fileID: 1325761682}
   - component: {fileID: 1325761683}
   m_Layer: 0
-  m_Name: FoodManager
+  m_Name: Food_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -629,9 +630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f8412a9bfb14645bf8b77136517d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHand: {fileID: 0}
+  playerHand: {fileID: 5972657505730785490}
   foodList: []
-  foods: []
 --- !u!1 &1432628267
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1611416345}
   m_Layer: 0
-  m_Name: EnemyManager
+  m_Name: Zombie_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -734,6 +734,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1695197104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1695197105}
+  - component: {fileID: 1695197106}
+  m_Layer: 0
+  m_Name: Game_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1695197105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695197104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 422940016}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1695197106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695197104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acfa4debd0e302b4dbb543df41bbb940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1994984796
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +789,7 @@ GameObject:
   - component: {fileID: 1994984797}
   - component: {fileID: 1994984798}
   m_Layer: 0
-  m_Name: ObjectsManager
+  m_Name: Objects_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -824,6 +868,10 @@ PrefabInstance:
     - target: {fileID: 7114536561730098140, guid: 10e7e083b7fc9804a8ed3455c101d7c5, type: 3}
       propertyPath: m_Name
       value: broccoli
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114536561730098140, guid: 10e7e083b7fc9804a8ed3455c101d7c5, type: 3}
+      propertyPath: m_TagString
+      value: Food
       objectReference: {fileID: 0}
     - target: {fileID: 7633665013059930470, guid: 10e7e083b7fc9804a8ed3455c101d7c5, type: 3}
       propertyPath: m_RootOrder
@@ -1057,6 +1105,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   live: 2000
+--- !u!114 &919132149321409922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149321409917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 986b7f435a00a864ba2ad1aa041cbb70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  foodManager: {fileID: 1325761681}
 --- !u!1 &1426480884306045020 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 794620852375173835, guid: 6bad83e22e95c6a42a044940ea876ebe, type: 3}
@@ -1134,6 +1195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hotDog
       objectReference: {fileID: 0}
+    - target: {fileID: 794620852375173835, guid: 6bad83e22e95c6a42a044940ea876ebe, type: 3}
+      propertyPath: m_TagString
+      value: Food
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bad83e22e95c6a42a044940ea876ebe, type: 3}
 --- !u!1001 &1872460279295770432
@@ -1190,6 +1255,10 @@ PrefabInstance:
     - target: {fileID: 8951336039947478081, guid: d136609de1df4d9488e55f6cbb5862ab, type: 3}
       propertyPath: m_Name
       value: donutSprinkles
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951336039947478081, guid: d136609de1df4d9488e55f6cbb5862ab, type: 3}
+      propertyPath: m_TagString
+      value: Food
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d136609de1df4d9488e55f6cbb5862ab, type: 3}
@@ -1349,6 +1418,19 @@ CapsuleCollider:
   m_Height: 0.6
   m_Direction: 0
   m_Center: {x: -0.000000039736506, y: 0.06578135, z: -0.00000023841858}
+--- !u!114 &3400195692718538053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426480884306045020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21bbf5e52a6a9ec41b1673563a88f2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healPoints: 60
 --- !u!114 &3469287838021726185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1527,6 +1609,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: burgerCheeseDouble
       objectReference: {fileID: 0}
+    - target: {fileID: 4083377572891281079, guid: c56f0a6015949c745bc621dd0a2f1034, type: 3}
+      propertyPath: m_TagString
+      value: Food
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c56f0a6015949c745bc621dd0a2f1034, type: 3}
 --- !u!1 &5418151003196922261 stripped
@@ -1589,8 +1675,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: iceCream
       objectReference: {fileID: 0}
+    - target: {fileID: 1904603256687761329, guid: f251d30dc34c53b45b1c68da77cf4c7e, type: 3}
+      propertyPath: m_TagString
+      value: Food
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f251d30dc34c53b45b1c68da77cf4c7e, type: 3}
+--- !u!4 &5972657505730785490 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 521671776741171656, guid: 9993ebe41277e834b81689d3116f6766, type: 3}
+  m_PrefabInstance: {fileID: 6187521394581328154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6187521394581328154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1645,6 +1740,10 @@ PrefabInstance:
     - target: {fileID: 6421873845910107239, guid: 9993ebe41277e834b81689d3116f6766, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421873845910107239, guid: 9993ebe41277e834b81689d3116f6766, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9993ebe41277e834b81689d3116f6766, type: 3}
@@ -1829,6 +1928,19 @@ CapsuleCollider:
   m_Height: 0.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.23160984, z: 0}
+--- !u!114 &8634852496541863052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5418151003196922261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21bbf5e52a6a9ec41b1673563a88f2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healPoints: 10
 --- !u!136 &8731897837731394967
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1843,6 +1955,19 @@ CapsuleCollider:
   m_Height: 0.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &8731897837731394968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7074331075963819075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21bbf5e52a6a9ec41b1673563a88f2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healPoints: 40
 --- !u!1 &8954990221773055915 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4083377572891281079, guid: c56f0a6015949c745bc621dd0a2f1034, type: 3}
@@ -1861,6 +1986,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.25
   m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!114 &8954990221773055917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954990221773055915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21bbf5e52a6a9ec41b1673563a88f2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healPoints: 100
 --- !u!65 &9134747514923449045
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1874,3 +2012,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2450586, y: 0.09499224, z: 0.28296918}
   m_Center: {x: 0, y: 0.05, z: 0}
+--- !u!114 &9134747514923449046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7333505095860706049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21bbf5e52a6a9ec41b1673563a88f2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healPoints: 20

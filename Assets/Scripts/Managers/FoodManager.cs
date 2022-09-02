@@ -6,37 +6,37 @@ public class FoodManager : MonoBehaviour {
 
     [SerializeField] Transform playerHand;
     [SerializeField] List<GameObject> foodList;
-    public List<GameObject> FoodListList { get => foodList; set => foodList = value; }
+    public List<GameObject> FoodList { get => foodList; set => foodList = value; }
 
-    [SerializeField] GameObject[] foods;
+    private float delay = 1f;
+
+    private float repeatTime = 30f;
 
     private void Start(){
 
         foodList = new List<GameObject>();
+        InvokeRepeating("MakeFood", delay, repeatTime); //después de 30 segundos vuelven a aparecer las comidas
     }
 
     private void Update() {
         
-        if (Input.GetKeyDown(KeyCode.E)) EatsFood();
-        if (Input.GetKeyDown(KeyCode.M)) MakeFood();
-        
     }
     
-    private void EatsFood(){
+    public void EatsFood(GameObject food){
 
-        for (int i = 0 ; i < foods.Length ; i++)
-            foods[i].SetActive(false);
-        
+        //desactivo una sola comida
+        food.SetActive(false);        
     }
 
     private void MakeFood(){
 
-        foreach (GameObject food in foods)
-            food.SetActive(true);      
+        foreach (GameObject food in foodList)
+            food.SetActive(true);
+   
     }
 
-    private void GrabFood(GameObject food){
-
+    public void GrabFood(GameObject food){
+        
         DetachFoods();
         food.SetActive(true);
         food.transform.parent = playerHand;
