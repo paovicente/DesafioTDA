@@ -7,7 +7,8 @@ Deberás entregar una escena de tu proyecto donde:
 diferentes métodos.
 - Darle alguna funcionalidad a nivel juego a la integración de dichos elementos.
 
------ Array: en script ObjectsManager -----
------ List: en script FoodManager -----
------ Dictionary: en script ZombiesManager ---
------ Se agregan elementos a List y Dictionary en el script PlayerCollision -----
+----- 
+- Array: en script ObjectsManager
+- List: en script FoodManager 
+- Dictionary: en script ZombiesManager 
+- Se agregan elementos a List y Dictionary en el script PlayerCollision 
