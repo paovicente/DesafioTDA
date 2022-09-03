@@ -810,6 +810,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1611416345}
+  - component: {fileID: 1611416346}
   m_Layer: 0
   m_Name: Zombie_Manager
   m_TagString: Untagged
@@ -832,6 +833,18 @@ Transform:
   m_Father: {fileID: 422940016}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1611416346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611416344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f9e1c43afb382b4baf726caee594428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1653098322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,6 +1178,21 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 1.9, z: 0}
+--- !u!114 &640820948340276193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640820948340276191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5276e5b7b6621664da07ab598d4981ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
+  playerTransform: {fileID: 543450653574430663}
+  manager: {fileID: 1611416346}
 --- !u!1 &919132147550354167 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6183921013350202084, guid: dcc20a28342edf34a80468e5976249d6, type: 3}
@@ -1252,6 +1280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodManager: {fileID: 1325761681}
+  zombieManager: {fileID: 1611416346}
 --- !u!1 &1426480884306045020 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 794620852375173835, guid: 6bad83e22e95c6a42a044940ea876ebe, type: 3}
@@ -1407,6 +1436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: zombieC
       objectReference: {fileID: 0}
+    - target: {fileID: 3589932134069640391, guid: 32fba85b2df627f49ace30c2814b27b6, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4222635845859624573, guid: 32fba85b2df627f49ace30c2814b27b6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1538,6 +1571,21 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 1.9, z: 0}
+--- !u!114 &3139823591196943082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3139823591196943080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5276e5b7b6621664da07ab598d4981ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4.75
+  playerTransform: {fileID: 543450653574430663}
+  manager: {fileID: 1611416346}
 --- !u!136 &3400195692718538052
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1624,6 +1672,10 @@ PrefabInstance:
     - target: {fileID: 3996084674130262754, guid: 113d2cc85738bdc4d91b0fc42c978567, type: 3}
       propertyPath: m_Name
       value: zombieA
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996084674130262754, guid: 113d2cc85738bdc4d91b0fc42c978567, type: 3}
+      propertyPath: m_TagString
+      value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4341225375277965400, guid: 113d2cc85738bdc4d91b0fc42c978567, type: 3}
       propertyPath: m_RootOrder
@@ -1958,6 +2010,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: secondaryCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 196081243405739190, guid: b6893588b8e47f541b43c92ce2012647, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 717003036658023948, guid: b6893588b8e47f541b43c92ce2012647, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1980,15 +2036,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 717003036658023948, guid: b6893588b8e47f541b43c92ce2012647, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 717003036658023948, guid: b6893588b8e47f541b43c92ce2012647, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 717003036658023948, guid: b6893588b8e47f541b43c92ce2012647, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 717003036658023948, guid: b6893588b8e47f541b43c92ce2012647, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2038,6 +2094,21 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 1.9, z: 0}
+--- !u!114 &7835742628443776132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491164907836456504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5276e5b7b6621664da07ab598d4981ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8.14
+  playerTransform: {fileID: 543450653574430663}
+  manager: {fileID: 1611416346}
 --- !u!4 &7966314322202395067 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8607038728638627579, guid: d136609de1df4d9488e55f6cbb5862ab, type: 3}

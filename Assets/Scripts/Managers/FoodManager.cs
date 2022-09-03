@@ -15,7 +15,7 @@ public class FoodManager : MonoBehaviour {
     private void Start(){
 
         foodList = new List<GameObject>();
-        InvokeRepeating("MakeFood", delay, 10f); //después de 20 segundos vuelven a aparecer las comidas
+        InvokeRepeating("MakeFood", delay, repeatTime); //después de 20 segundos vuelven a aparecer las comidas
     }
 
     private void MakeFood(){
@@ -41,6 +41,7 @@ public class FoodManager : MonoBehaviour {
     private void DetachFoods(){
 
         GameObject foods  = GameObject.Find("---FOODS---");
+        
         foreach (Transform child in playerHand){
             child.parent = foods.transform;
             child.transform.position = new Vector3(Random.Range(0f,5f), 0f,Random.Range(0f,5f));

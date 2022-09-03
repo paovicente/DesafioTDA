@@ -13,15 +13,4 @@ public class ZombieManager : MonoBehaviour {
         zombieDirectory = new Dictionary<string, GameObject>();
     }
 
-    // Update is called once per frame
-    void Update(){
-        /*if (Input.GetKeyDown(KeyCode.Alpha1)) zombieController(zombieDirectory["WeaponA"]);
-        if (Input.GetKeyDown(KeyCode.Alpha2)) zombieController(zombieDirectory["WeaponB"]);
-        if (Input.GetKeyDown(KeyCode.Alpha3)) zombieController(zombieDirectory["WeaponD"]);*/
-    
-    }
-
-    public void zombieController(){
-
-    }
 }

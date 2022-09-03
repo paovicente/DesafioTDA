@@ -6,7 +6,7 @@ public class PlayerCollision : MonoBehaviour {
 
     [SerializeField] GameObject foodManager;
 
-    /*[SerializeField] ZombieManager zombieManager;*/
+    [SerializeField] ZombieManager zombieManager;
 
     private PlayerData playerData;
     
@@ -46,6 +46,10 @@ public class PlayerCollision : MonoBehaviour {
             Debug.Log("VIDA LUEGO DEL DAÑO: " + playerData.HP);
         }
 
+        if (other.gameObject.tag == "enemy"){
+            zombieManager.ZombieDirectory.Add(other.gameObject.name,other.gameObject);
+            Debug.Log("ZOMBIE AGREGADO: " + zombieManager.ZombieDirectory[other.gameObject.name]);
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
