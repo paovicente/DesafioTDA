@@ -11,26 +11,20 @@ public class ZombieMovement : MonoBehaviour {
 
     private void Update() {
 
-        if (manager.ZombieDirectory.ContainsKey(gameObject.name)){
-            /*if (Input.GetKey(KeyCode.Alpha1)) zombieController(manager.ZombieDirectory["zombieA"]);
-            if (Input.GetKey(KeyCode.Alpha2)) zombieController(manager.ZombieDirectory["zombieC"]);
-            if (Input.GetKey(KeyCode.Alpha3)) zombieController(manager.ZombieDirectory["secondaryCharacter"]);*/
-
-            if (Input.GetKey(KeyCode.Alpha1) && gameObject.name == "zombieA") 
-                zombieController(manager.ZombieDirectory["zombieA"]);
+        if (manager.ZombieDirectory.ContainsKey(gameObject.name)){    
+            zombieController();
         }
 
     }
 
-    public void zombieController(GameObject zombie){
+    public void zombieController(){
 
-        switch (zombie.name){
+        switch (gameObject.name){
             case "zombieA": ChasePlayer();
             break;
             case "zombieC": RotateAroundPlayer();
             break;
-            case "secondaryCharacter":  //ChasePlayer();
-                                        ConfrontPlayer();
+            case "secondaryCharacter":  ConfrontPlayer();
             break;
             default:    Debug.Log("TIPO DE ENEMIGO NO ENCONTRADO");
             break;
@@ -48,7 +42,7 @@ public class ZombieMovement : MonoBehaviour {
         LookPlayer();
         Vector3 direction = (playerTransform.position - transform.position);
 
-        if (direction.magnitude >= 2f)
+        if (direction.magnitude >= 3f)
             transform.position += direction.normalized * speed * Time.deltaTime;
     }
 
@@ -58,8 +52,9 @@ public class ZombieMovement : MonoBehaviour {
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, 2f * Time.deltaTime);
     }
 
-    public void ConfrontPlayer(){
+    private void ConfrontPlayer(){
 
-        transform.Rotate(new Vector3(0f,180f,0f));
+        gameObject.transform.LookAt(playerTransform);
     }
+
 }

@@ -10,12 +10,12 @@ public class FoodManager : MonoBehaviour {
 
     private float delay = 1f;
 
-    private float repeatTime = 20f;
+    private float repeatTime = 10f;
 
     private void Start(){
 
         foodList = new List<GameObject>();
-        InvokeRepeating("MakeFood", delay, repeatTime); //después de 20 segundos vuelven a aparecer las comidas
+        InvokeRepeating("MakeFood", delay, repeatTime); //después de 10 segundos vuelven a aparecer las comidas
     }
 
     private void MakeFood(){

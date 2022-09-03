@@ -47,8 +47,15 @@ public class PlayerCollision : MonoBehaviour {
         }
 
         if (other.gameObject.tag == "enemy"){
-            zombieManager.ZombieDirectory.Add(other.gameObject.name,other.gameObject);
-            Debug.Log("ZOMBIE AGREGADO: " + zombieManager.ZombieDirectory[other.gameObject.name]);
+
+            if (zombieManager.ZombieDirectory.ContainsKey(other.gameObject.name) == false){
+
+                zombieManager.ZombieDirectory.Add(other.gameObject.name,other.gameObject);
+                Debug.Log("ZOMBIE AGREGADO: " + zombieManager.ZombieDirectory[other.gameObject.name]);
+                
+                playerData.Damage(500);
+                Debug.Log("VIDA LUEGO DEL DAÑO: " + playerData.HP);
+            }
         }
     }
 
