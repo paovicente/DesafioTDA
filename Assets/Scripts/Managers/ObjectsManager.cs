@@ -20,7 +20,7 @@ public class ObjectsManager : MonoBehaviour {
 
     private void IsTimeToAppear(){
 
-        if (timer >= 3f){
+        if (timer >= 5f){
             if (appear == true){
                 DisableObjects();
                 timer = 0f;

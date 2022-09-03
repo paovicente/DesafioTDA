@@ -6,12 +6,11 @@ public class PlayerCollision : MonoBehaviour {
 
     [SerializeField] GameObject foodManager;
 
-    /*[SerializeField] ZombieManager zombieManager;
-
-    [SerializeField] ObjectsManager objectsManager; */
+    /*[SerializeField] ZombieManager zombieManager;*/
 
     private PlayerData playerData;
     
+    private int countFood = 0;
     // Start is called before the first frame update
     void Start(){
 
@@ -23,6 +22,9 @@ public class PlayerCollision : MonoBehaviour {
         
         //MANEJAR CASOS DE GAME OVER
         if (GameManager.GameOver == false){
+
+            VerifyCounter();    //desaparecen las comidas
+
             if (playerData.HP <= 0){
                 Debug.Log("GAME OVER -- SIN VIDA");
                 GameManager.GameOver = true;
@@ -49,11 +51,10 @@ public class PlayerCollision : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         
         if (other.gameObject.tag == "Food"){
-            FoodManager component = foodManager.GetComponent<FoodManager>();
-            component.GrabFood(other.gameObject);
+            countFood++;
 
-            //esperar un rato antes de comer
-            //component.EatsFood(other.gameObject);
+            FoodManager component = foodManager.GetComponent<FoodManager>();
+            component.EatsFood(other.gameObject);
 
             component.FoodList.Add(other.gameObject);   //agrego la comida a la lista
             
@@ -69,6 +70,15 @@ public class PlayerCollision : MonoBehaviour {
                 component.FoodList.Clear();
                 GameManager.GameOver = true;
             }
+        }
+    }
+
+    private void VerifyCounter(){
+
+        if (countFood == 5){
+            FoodManager component = foodManager.GetComponent<FoodManager>();
+            component.KillFood();
+            countFood = 0;
         }
     }
 }

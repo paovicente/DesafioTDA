@@ -10,22 +10,12 @@ public class FoodManager : MonoBehaviour {
 
     private float delay = 1f;
 
-    private float repeatTime = 30f;
+    private float repeatTime = 20f;
 
     private void Start(){
 
         foodList = new List<GameObject>();
-        InvokeRepeating("MakeFood", delay, repeatTime); //después de 30 segundos vuelven a aparecer las comidas
-    }
-
-    private void Update() {
-        
-    }
-    
-    public void EatsFood(GameObject food){
-
-        //desactivo una sola comida
-        food.SetActive(false);        
+        InvokeRepeating("MakeFood", delay, 10f); //después de 20 segundos vuelven a aparecer las comidas
     }
 
     private void MakeFood(){
@@ -35,7 +25,12 @@ public class FoodManager : MonoBehaviour {
    
     }
 
-    public void GrabFood(GameObject food){
+    public void KillFood(){
+        foreach (GameObject food in foodList)
+            food.SetActive(false);
+    }
+
+    public void EatsFood(GameObject food){
         
         DetachFoods();
         food.SetActive(true);
@@ -45,10 +40,11 @@ public class FoodManager : MonoBehaviour {
 
     private void DetachFoods(){
 
+        GameObject foods  = GameObject.Find("---FOODS---");
         foreach (Transform child in playerHand){
-            child.parent = null;
-            child.transform.position = new Vector3(Random.Range(0f,3f), 1f,Random.Range(0f,3f));
-            child.gameObject.SetActive(true);
+            child.parent = foods.transform;
+            child.transform.position = new Vector3(Random.Range(0f,5f), 0f,Random.Range(0f,5f));
+            child.gameObject.SetActive(true); 
         }
     }
 }
